@@ -46,7 +46,7 @@ pen.color('white')
 pen.penup()
 pen.hideturtle()
 pen.goto(0,260)
-pen.write("PlayerA: 0  PlayerB: 0", align = 'center', font=("Courier", 24, "normal"))
+pen.write("PlayerA: 0  PlayerB: 0", align = 'center', font=("Courier", 24, "bold"))
 
 #Function
 def paddle_a_up():
@@ -69,7 +69,7 @@ def paddle_b_down():
     y -= 20
     paddle_b.sety(y)
 
-
+    
 #Buildings
 wn.listen()
 wn.onkeypress(paddle_a_up, 'a') 
@@ -126,6 +126,7 @@ while True:
         ball.dx *= -1
         os.system("afplay mixkit-soccer-ball-quick-kick-2108.wav&") 
     
+    #increasing speed by 7
     #Increasing speed of the ball
     if (ball.dy > 0 and ball.dy < 5):
         ball.dy += 0.5
@@ -136,3 +137,15 @@ while True:
         ball.dx += 0.5
     elif(ball.dx < 0 and ball.dx > -5):
         ball.dx -= 0.5
+
+
+    if (ball.dy > 0 and ball.dy < 7):
+        ball.dy += 1
+    elif(ball.dy < 0 and ball.dy > -7):
+        ball.dy -= 1
+
+    if (ball.dx > 0 and ball.dx < 7):
+        ball.dx += 1
+    elif(ball.dx < 0 and ball.dx > -7):
+        ball.dx -= 1
+    
